@@ -4,7 +4,7 @@ use opentelemetry::{
 };
 use std::env;
 
-struct JaegerConfig { // (1)
+struct JaegerConfig {
     jaeger_agent_host: String,
     jaeger_agent_port: String,
     jaeger_tracing_service_name: String,
@@ -25,8 +25,8 @@ pub fn create_tracer_from_env() -> Option<Tracer> {
 }
 
 fn init_tracer(config: JaegerConfig) -> Tracer {
-    global::set_text_map_propagator(TraceContextPropagator::new()); // (2)
-    opentelemetry_jaeger::new_agent_pipeline() // (3)
+    global::set_text_map_propagator(TraceContextPropagator::new());
+    opentelemetry_jaeger::new_agent_pipeline()
         .with_endpoint(format!(
             "{}:{}",
             config.jaeger_agent_host, config.jaeger_agent_port

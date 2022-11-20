@@ -33,18 +33,18 @@ pub(crate) async fn graphql_handler(
     req: GraphQLRequest,
     Extension(schema): Extension<ServiceSchema>,
 ) -> GraphQLResponse {
-    let span = span!(Level::INFO, "graphql_execution"); // (1)
+    let span = span!(Level::INFO, "graphql_execution");
 
     info!("Processing GraphQL request");
 
-    let response = async move { schema.execute(req.into_inner()).await } // (2)
+    let response = async move { schema.execute(req.into_inner()).await }
         .instrument(span.clone())
         .await;
 
     info!("Processing GraphQL request finished");
 
     response
-        .extension( // (3)
+        .extension(
             "traceId",
             async_graphql::Value::String(format!(
                 "{}",

@@ -16,7 +16,7 @@ mod model;
 mod observability;
 mod routes;
 
-async fn shutdown_signal() { // (1)
+async fn shutdown_signal() {
     let ctrl_c = async {
         signal::ctrl_c()
             .await
@@ -73,7 +73,7 @@ async fn main() {
 
     Server::bind(&"0.0.0.0:8000".parse().unwrap())
         .serve(app.into_make_service())
-        .with_graceful_shutdown(shutdown_signal()) // (2)
+        .with_graceful_shutdown(shutdown_signal())
         .await
         .unwrap();
 }
