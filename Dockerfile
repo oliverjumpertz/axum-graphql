@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 lukemathwalker/cargo-chef:latest-rust-1.65.0 AS chef
+FROM --platform=linux/amd64 lukemathwalker/cargo-chef:latest-rust-1.71.1 AS chef
 
 WORKDIR /app
 
