@@ -4,16 +4,16 @@ name = "axum-graphql"
 version = "0.1.0"
 
 [dependencies]
-async-graphql = "6.0.3"
-async-graphql-axum = "6.0.3"
+async-graphql = "6.0.6"
+async-graphql-axum = "6.0.6"
 axum = "0.6.20"
 dotenv = "0.15.0"
 metrics = "0.21.1"
 metrics-exporter-prometheus = "0.12.1"
 opentelemetry = {version = "0.20.0", features = ["rt-tokio"]}
 opentelemetry-jaeger = {version = "0.19.0", features = ["rt-tokio"]}
-serde = {version = "1.0.147", features = ["derive"]}
-tokio = {version = "1.18.2", features = ["full"]}
+serde = {version = "1.0.188", features = ["derive"]}
+tokio = {version = "1.32.0", features = ["full"]}
 tracing = "0.1.37"
-tracing-opentelemetry = "0.20.0"
-tracing-subscriber = {version = "0.3.16", features = ["std", "env-filter"]}
+tracing-opentelemetry = "0.21.0"
+tracing-subscriber = {version = "0.3.17", features = ["std", "env-filter"]}
