@@ -10,11 +10,11 @@ axum = "0.6.20"
 dotenv = "0.15.0"
 metrics = "0.21.1"
 metrics-exporter-prometheus = "0.12.1"
-opentelemetry = {version = "0.20.0", features = ["rt-tokio"]}
-opentelemetry-jaeger = {version = "0.19.0", features = ["rt-tokio"]}
-serde = {version = "1.0.188", features = ["derive"]}
-tokio = {version = "1.32.0", features = ["full"]}
+opentelemetry = { version = "0.20.0", features = ["rt-tokio"] }
+opentelemetry-jaeger = { version = "0.19.0", features = ["rt-tokio"] }
+serde = { version = "1.0.188", features = ["derive"] }
+tokio = { version = "1.32.0", features = ["full"] }
 tracing = "0.1.37"
 tracing-opentelemetry = "0.21.0"
-tracing-subscriber = {version = "0.3.17", features = ["std", "env-filter"]}
+tracing-subscriber = { version = "0.3.17", features = ["std", "env-filter"] }
 log = "0.4.20"
